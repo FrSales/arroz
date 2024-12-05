@@ -1,6 +1,5 @@
 import requests
 
-# Enviando a requisição POST para o servidor
 response = requests.post("https://frsales.pythonanywhere.com/", json={
     "arroz_inicial": 10000,
     "arroz_final": 10000,
@@ -17,9 +16,8 @@ response = requests.post("https://frsales.pythonanywhere.com/", json={
 })
 
 if response.status_code == 200:
-    dados_relatorio = response.json()   # resposta JSON
+    dados_relatorio = response.json() 
 
-    # Acessando o relatório como texto
     relatorio = dados_relatorio.get('relatorio', '')
     
     print(relatorio)
